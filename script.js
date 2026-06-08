@@ -570,4 +570,67 @@ document.addEventListener('DOMContentLoaded', () => {
       if (captionText) captionText.textContent = scenarios[currentScenario].text;
     }, 3000);
   }
+
+  // ==========================================
+  // 13. POINTER HIGHLIGHT ANIMATION (Present Level Section Header)
+  // ==========================================
+  const pointerHighlights = document.querySelectorAll('.pointer-highlight');
+  if (pointerHighlights.length > 0 && typeof gsap !== 'undefined') {
+    if (typeof ScrollTrigger !== 'undefined') {
+      gsap.registerPlugin(ScrollTrigger);
+    }
+    
+    pointerHighlights.forEach(ph => {
+      const rect = ph.querySelector('.pointer-highlight-rect');
+      const cursor = ph.querySelector('.pointer-highlight-cursor');
+      
+      if (rect && cursor) {
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: ph,
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          }
+        })
+        .to(rect, {
+          width: '100%',
+          height: '100%',
+          duration: 1,
+          ease: 'power2.inOut'
+        })
+        .to(cursor, {
+          opacity: 1,
+          left: '100%',
+          top: '100%',
+          x: 4,
+          y: 4,
+          duration: 1,
+          ease: 'power2.inOut'
+        }, '<');
+      }
+    });
+  }
+
+  // ==========================================
+  // 14. WOBBLE CARD MOUSE PHYSICS (Present Level Section)
+  // ==========================================
+  const wobbleCards = document.querySelectorAll('.wobble-card');
+  wobbleCards.forEach(card => {
+    const inner = card.querySelector('.wobble-card-inner');
+    if (!inner) return;
+
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - (rect.left + rect.width / 2)) / 20;
+      const y = (e.clientY - (rect.top + rect.height / 2)) / 20;
+      
+      card.style.transform = `translate3d(${x}px, ${y}px, 0) scale3d(1, 1, 1)`;
+      inner.style.transform = `translate3d(${-x}px, ${-y}px, 0) scale3d(1.03, 1.03, 1)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = `translate3d(0px, 0px, 0) scale3d(1, 1, 1)`;
+      inner.style.transform = `translate3d(0px, 0px, 0) scale3d(1, 1, 1)`;
+    });
+  });
 });

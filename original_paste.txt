@@ -1,99 +1,0 @@
-Created At: 2026-06-03T14:37:46Z
-Completed At: 2026-06-03T14:37:47Z
-File Path: `file:///c:/Users/metpa/OneDrive/Documents/shraddha%20institute/scratch/step_818.txt`
-Total Lines: 132
-Total Bytes: 4251
-Showing lines 1 to 132
-The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
-1: <USER_REQUEST>
-2: I am going to paste the complete website content below.
-3: 
-4: Your task is to:
-5: 
-6: * Analyze the content.
-7: * Organize it into the most suitable website sections.
-8: * Create a logical flow from top to bottom.
-9: * Decide which content should be hero content, feature sections, process sections, course sections, benefits sections, and call-to-action sections.
-10: * Use cards, timelines, grids, accordions, and modern layouts wherever appropriate.
-11: * Preserve the exact text content.
-12: * Do not rewrite, shorten, or paraphrase the content.
-13: * Improve only the visual presentation and structure.
-14: * Create a premium, modern, and professional educational website.
-15: * Add smooth animations and micro-interactions.
-16: * Ensure full responsiveness across mobile, tablet, laptop, and desktop.
-17: * Use the uploaded hero animation as the main visual element.
-18: * Maintain consistent spacing, typography, and visual hierarchy.
-19: 
-20: I will paste the content below:
-21: 
-22: # **Start Speaking English from Where You Are**
-23: 
-24: Whether you are a beginner, a school student, a job seeker, an employee, a homemaker, a business person, or a professional — we have the right English course for you.
-25: 
-26: ## **Read Better. Speak Better. Grow Better.**
-27: 
-28: ---
-29: 
-30: ## **Your English Journey Starts with Your Present Level**
-31: 
-32: You need not feel shy about your English.
-33: 
-34: You may know only a few words.
-35: You may understand English but hesitate to speak.
-36: You
-<truncated 1255 bytes>
-: We correct your mistakes gently and practically.
-80: 
-81: ### **7. Build Your Confidence**
-82: 
-83: You slowly become ready to use English in real life.
-84: 
-85: ---
-86: 
-87: ## **English Is Not Just a Subject. It Is a Life Skill.**
-88: 
-89: Good English can help you:
-90: 
-91: Speak with confidence
-92: Perform better in interviews
-93: Communicate at work
-94: Support your children
-95: Grow your business
-96: Travel comfortably
-97: Build your personality
-98: Create better opportunities
-99: 
-100: English can change the way people see you.
-101: More importantly, it can change the way you see yourself.
-102: 
-103: ---
-104: 
-105: ## **Join Shraddha Spoken English Institute**
-106: 
-107: Start from your present level.
-108: Learn with a clear method.
-109: Practise with confidence.
-110: Use English in real life.
-111: 
-112: # **Read Better. Speak Better. Grow Better.**
-113: 
-114: ### **Book Your Free English Assessment Today**
-115: 
-116: **Shraddha Spoken English Institute**
-117: **Online & Offline Classes Available**
-118: **Call / WhatsApp: [Your Number]**
-119: </USER_REQUEST>
-120: <ADDITIONAL_METADATA>
-121: The current local time is: 2026-06-03T15:28:38+05:30.
-122: 
-123: The user's current state is as follows:
-124: Active Document: c:\Users\metpa\OneDrive\Documents\shraddha institute\components\ui\button.tsx (LANGUAGE_TSX)
-125: Cursor is on line: 1
-126: Other open documents:
-127: - c:\Users\metpa\OneDrive\Documents\shraddha institute\components\ui\button.tsx (LANGUAGE_TSX)
-128: - c:\Users\metpa\OneDrive\Documents\shraddha institute\step_646_write_to_file.json (LANGUAGE_JSON)
-129: - c:\Users\metpa\OneDrive\Documents\shraddha institute\index.html (LANGUAGE_HTML)
-130: - c:\Users\metpa\OneDrive\Documents\shraddha institute\extract_step_contents.py (LANGUAGE_PYTHON)
-131: - c:\Users\metpa\OneDrive\Documents\shraddha institute\inspect_diff_courses.py (LANGUAGE_PYTHON)
-132: </ADDITIONAL_METADATA>
-The above content shows the entire, complete file contents of the requested file.
