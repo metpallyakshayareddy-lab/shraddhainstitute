@@ -128,7 +128,7 @@ ul, ol {
 .section-header {
   text-align: center;
   max-width: 700px;
-  margin: 0 auto 4rem auto;
+  margin: 0 auto 2.25rem auto;
 }
 
 .section-tag {
@@ -235,8 +235,9 @@ ul, ol {
 }
 
 .logo-img {
-  height: 48px;
+  height: 56px;
   width: auto;
+  transition: height var(--transition-fast);
 }
 
 .nav-separator {
@@ -319,12 +320,12 @@ ul, ol {
    SECTION 1: HERO SECTION
    ========================================== */
 .hero {
-  padding-top: calc(var(--header-height) + 2rem);
-  padding-bottom: 2rem;
+  padding-top: calc(var(--header-height) + 3.5rem);
+  padding-bottom: 3.5rem;
   background-color: var(--color-white);
-  min-height: 70vh;
+  min-height: 65vh;
   display: flex;
-  align-items: stretch;
+  align-items: center;
 }
 
 .hero .container {
@@ -334,7 +335,7 @@ ul, ol {
 .hero-grid {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
-  gap: 1.5rem;
+  gap: 4.5rem;
   align-items: center;
 }
 
@@ -394,10 +395,108 @@ ul, ol {
 .hero-image-wrapper {
   position: relative;
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  align-self: stretch;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
 }
+
+/* Floating Spoken English & Course Concept Pills */
+.hero-floating-pill {
+  position: absolute;
+  z-index: 5;
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  box-shadow: var(--shadow-lg);
+  white-space: nowrap;
+  transition: scale var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+  user-select: none;
+}
+
+.hero-floating-pill:hover {
+  scale: 1.08;
+  box-shadow: var(--shadow-xl);
+  z-index: 12;
+  cursor: default;
+}
+
+/* Individual Pill Positioning & Soft Colors */
+.pill-personalized {
+  top: 12%;
+  left: 2%;
+  background-color: #E0F2FE; /* Sky 100 (Soft Blue) */
+  color: #0369A1; /* Sky 700 */
+  border: 1.5px solid #BAE6FD; /* Sky 200 */
+  animation: floatPill1 6s ease-in-out infinite;
+}
+
+.pill-practical {
+  top: 22%;
+  right: 5%;
+  background-color: #DCFCE7; /* Emerald 100 (Soft Green) */
+  color: #15803D; /* Emerald 700 */
+  border: 1.5px solid #BBF7D0; /* Emerald 200 */
+  animation: floatPill2 7s ease-in-out infinite;
+}
+
+.pill-purpose {
+  bottom: 35%;
+  left: -5%;
+  background-color: #F3E8FF; /* Purple 100 (Soft Purple) */
+  color: #6B21A8; /* Purple 700 */
+  border: 1.5px solid #E9D5FF; /* Purple 200 */
+  animation: floatPill3 6.2s ease-in-out infinite;
+}
+
+.pill-confidence {
+  bottom: 22%;
+  right: 2%;
+  background-color: #FFE4E6; /* Rose 100 (Soft Rose/Pink) */
+  color: #BE123C; /* Rose 700 */
+  border: 1.5px solid #FECDD3; /* Rose 200 */
+  animation: floatPill4 7.5s ease-in-out infinite;
+}
+
+.pill-guidance {
+  bottom: 6%;
+  left: 22%;
+  background-color: #FEF3C7; /* Amber 100 (Soft Gold/Amber) */
+  color: #B45309; /* Amber 700 */
+  border: 1.5px solid #FDE68A; /* Amber 200 */
+  animation: floatPill5 6.6s ease-in-out infinite;
+}
+
+/* Float Animations using modern 'translate' */
+@keyframes floatPill1 {
+  0%, 100% { translate: 0 0; }
+  50% { translate: -4px -10px; }
+}
+
+@keyframes floatPill2 {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 6px -8px; }
+}
+
+@keyframes floatPill3 {
+  0%, 100% { translate: 0 0; }
+  50% { translate: -8px 6px; }
+}
+
+@keyframes floatPill4 {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 8px -6px; }
+}
+
+@keyframes floatPill5 {
+  0%, 100% { translate: 0 0; }
+  50% { translate: -4px -12px; }
+}
+
 
 .hero-image-bg {
   display: none;
@@ -739,696 +838,344 @@ ul, ol {
 /* ==========================================
    SECTION 3: FIRST, WE UNDERSTAND YOU
    ========================================== */
-.understand-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3.5rem;
-  align-items: center;
-}
-
-.understand-checklist {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.checklist-item {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.checklist-bullet {
-  width: 32px;
-  height: 32px;
-  background-color: var(--color-primary-light);
-  color: var(--color-primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.checklist-text {
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--color-dark);
-}
-
-.understand-method-card {
-  background-color: var(--color-light);
+.understand-table-wrapper {
+  background-color: var(--color-white);
   border: 1px solid var(--color-border);
-  padding: 2.5rem;
-  border-radius: 0;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+}
+
+.assessment-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.assessment-table th, 
+.assessment-table td {
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+}
+
+.assessment-table th {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid rgba(11, 60, 155, 0.15);
+}
+
+.assessment-table tbody tr {
+  transition: background-color var(--transition-fast), border-left-color var(--transition-fast);
+  border-left: 3px solid transparent;
+}
+
+.assessment-table tbody tr:hover {
+  background-color: rgba(11, 60, 155, 0.02);
+  border-left-color: var(--color-primary);
+}
+
+.assessment-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.assessment-table .col-area {
+  width: 25%;
+}
+
+.assessment-table .col-check {
+  width: 40%;
+}
+
+.assessment-table .col-impact {
+  width: 35%;
+}
+
+/* Color badges for assessment areas */
+.area-badge {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  letter-spacing: -0.01em;
+  border: 1px solid;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.badge-blue {
+  background-color: #E0F2FE;
+  color: #0369A1;
+  border-color: #BAE6FD;
+}
+
+.badge-green {
+  background-color: #DCFCE7;
+  color: #15803D;
+  border-color: #BBF7D0;
+}
+
+.badge-purple {
+  background-color: #F3E8FF;
+  color: #6B21A8;
+  border-color: #E9D5FF;
+}
+
+.badge-rose {
+  background-color: #FFE4E6;
+  color: #BE123C;
+  border-color: #FECDD3;
+}
+
+.badge-amber {
+  background-color: #FEF3C7;
+  color: #B45309;
+  border-color: #FDE68A;
+}
+
+.badge-indigo {
+  background-color: #E0E7FF;
+  color: #3730A3;
+  border-color: #C7D2FE;
+}
+
+/* Banner under the table */
+.understand-summary-banner {
+  background: radial-gradient(circle at top left, rgba(14, 165, 233, 0.06), transparent 50%), 
+              var(--color-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
   box-shadow: var(--shadow-sm);
 }
 
-.method-intro {
-  font-size: 1.05rem;
-  color: var(--color-text-muted);
-  margin-bottom: 1rem;
-}
-
-.method-philosophy-highlight {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: 0.75rem;
-  line-height: 1.4;
-}
-
-.method-philosophy-details {
+.summary-banner-content h4 {
   font-size: 1.15rem;
-  color: var(--color-dark);
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin-bottom: 0.35rem;
 }
 
-.method-philosophy-details strong {
+.summary-banner-content p {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.summary-banner-content strong {
   color: var(--color-secondary);
 }
 
 /* ==========================================
-   SECTION 4: INTERACTIVE METHODOLOGY PORTAL
+   SECTION 4: BENTO GRID METHODOLOGY
    ========================================== */
-.methodology-portal {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  background-color: var(--color-white);
-  border-radius: var(--radius-lg);
-  padding: 2rem;
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-lg);
-  overflow: hidden;
-  position: relative;
+#methodology {
+  padding: 3.5rem 0; /* Tighter padding for a more compact methodology section */
 }
 
-/* Slider Header Controls */
-.portal-slider-header {
+.methodology-bento {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.bento-card {
+  border-radius: 20px;
+  padding: 1.75rem; /* Reduced card padding for cleaner visual weight */
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: space-between;
-  border-bottom: 1px solid var(--color-border);
-  padding-bottom: 1.5rem;
-  margin-bottom: 0.5rem;
-  position: relative;
-  z-index: 10;
+  gap: 1.25rem;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  border: 1px solid transparent;
+  box-shadow: var(--shadow-sm);
+  background-color: var(--color-white);
 }
 
-.portal-slide-info {
+.bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.bento-card-header {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.5rem; /* Tighter header spacing */
 }
 
-.portal-slide-number {
+.bento-badge {
+  display: inline-block;
+  align-self: flex-start;
   font-family: var(--font-heading);
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: var(--color-secondary);
+  font-size: 0.7rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
 }
 
-.portal-slide-title-header {
+.bento-card h3 {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 800;
-  color: var(--color-primary-dark);
+  line-height: 1.3;
 }
 
-.portal-slider-arrows {
-  display: flex;
-  gap: 0.75rem;
+.bento-desc {
+  font-size: 0.88rem;
+  line-height: 1.5; /* Slightly tighter reading line height */
 }
 
-.portal-arrow-btn {
-  width: 44px;
-  height: 44px;
-  border-radius: 0;
-  background-color: var(--color-light);
-  border: 1px solid var(--color-border);
-  color: var(--color-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  box-shadow: var(--shadow-sm);
+/* Scenarios Grid List inside Bento Card 1 */
+.bento-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem 1.25rem;
+  margin-top: 0.75rem;
+  padding: 0;
 }
 
-.portal-arrow-btn:hover:not(:disabled) {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  border-color: var(--color-primary);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
-.portal-arrow-btn:active:not(:disabled) {
-  transform: translateY(0);
-}
-
-.portal-arrow-btn:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-  box-shadow: none;
-}
-
-/* Slider Container & Track */
-.portal-slider-container {
-  overflow: hidden;
-  width: 100%;
+.bento-list li {
+  font-size: 0.82rem;
+  line-height: 1.45;
   position: relative;
-  transition: height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  padding-left: 0.85rem;
 }
 
-.portal-slides-track {
-  display: flex;
-  align-items: flex-start; /* Ensure slides do not stretch to tallest slide */
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  width: 100%;
+.bento-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: inherit;
+  font-weight: bold;
 }
 
-.portal-slide {
-  flex-shrink: 0;
-  width: 100%;
-  opacity: 0;
-  transition: opacity 0.6s ease-in-out;
-  pointer-events: none;
+/* Soft Color Systems */
+/* 1. Sky Blue Card */
+.card-sky {
+  background-color: #F0F9FF;
+  border-color: #E0F2FE;
+  color: #0369A1;
+}
+.card-sky h3 {
+  color: #0C4A6E;
+}
+.card-sky .bento-badge {
+  background-color: #E0F2FE;
+  color: #0369A1;
+}
+.card-sky .bento-desc {
+  color: #075985;
+}
+.card-sky:hover {
+  border-color: #BAE6FD;
 }
 
-.portal-slide.active {
-  opacity: 1;
-  pointer-events: auto;
+/* 2. Purple Card */
+.card-purple {
+  background-color: #FAF5FF;
+  border-color: #F3E8FF;
+  color: #6B21A8;
+}
+.card-purple h3 {
+  color: #581C87;
+}
+.card-purple .bento-badge {
+  background-color: #F3E8FF;
+  color: #6B21A8;
+}
+.card-purple .bento-desc {
+  color: #701A75;
+}
+.card-purple:hover {
+  border-color: #E9D5FF;
 }
 
-/* Pagination Dots */
-.portal-dots-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 1.5rem;
-  border-top: 1px solid var(--color-border);
-  padding-top: 1.25rem;
+/* 3. Green Card */
+.card-green {
+  background-color: #F0FDF4;
+  border-color: #DCFCE7;
+  color: #15803D;
+}
+.card-green h3 {
+  color: #14532D;
+}
+.card-green .bento-badge {
+  background-color: #DCFCE7;
+  color: #15803D;
+}
+.card-green .bento-desc {
+  color: #166534;
+}
+.card-green:hover {
+  border-color: #BBF7D0;
 }
 
-.portal-dots {
-  display: flex;
-  gap: 0.75rem;
-  align-items: center;
+/* 4. Amber Card */
+.card-amber {
+  background-color: #FFFBEB;
+  border-color: #FEF3C7;
+  color: #B45309;
+}
+.card-amber h3 {
+  color: #78350F;
+}
+.card-amber .bento-badge {
+  background-color: #FEF3C7;
+  color: #B45309;
+}
+.card-amber .bento-desc {
+  color: #92400E;
+}
+.card-amber:hover {
+  border-color: #FDE68A;
 }
 
-.portal-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 0;
-  background-color: var(--color-border);
-  cursor: pointer;
-  transition: all var(--transition-fast);
+/* 5. Rose Card */
+.card-rose {
+  background-color: #FFF1F2;
+  border-color: #FFE4E6;
+  color: #BE123C;
+}
+.card-rose h3 {
+  color: #881337;
+}
+.card-rose .bento-badge {
+  background-color: #FFE4E6;
+  color: #BE123C;
+}
+.card-rose .bento-desc {
+  color: #9F1239;
+}
+.card-rose:hover {
+  border-color: #FECDD3;
 }
 
-.portal-dot:hover {
-  background-color: var(--color-secondary);
-  transform: scale(1.2);
+/* Bento Width Modifiers */
+.bento-w2 {
+  grid-column: span 2;
 }
-
-.portal-dot.active {
-  background-color: var(--color-primary);
-  width: 24px;
-  border-radius: 0;
-}
-
 
 /* Section Anchor Scroll Offset for Sticky Header */
 section {
   scroll-margin-top: calc(var(--header-height) + 1.5rem);
 }
 
-/* Full Width Layout for Methodology Steps */
-.tab-split-container {
-  display: block;
-  width: 100%;
-}
-
-.tab-split-content {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-/* Typography & Content Layout */
-.content-supertitle {
-  font-family: var(--font-heading);
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--color-secondary);
-  letter-spacing: 0.05em;
-  margin-bottom: 0.5rem;
-  display: block;
-}
-
-.tab-split-content h3 {
-  font-size: 1.75rem;
-  color: var(--color-primary);
-  margin-bottom: 1rem;
-}
-
-.tab-split-content .panel-intro-text {
-  font-size: 1rem;
-  color: var(--color-text-muted);
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-}
-
-.content-divider {
-  height: 1px;
-  background: var(--color-border);
-  margin: 1.25rem 0;
-}
-
-.content-subtitle {
-  font-size: 1.2rem;
-  font-weight: 800;
-  color: var(--color-dark);
-  margin-bottom: 0.5rem;
-}
-
-.content-subintro {
-  font-size: 0.9rem;
-  color: var(--color-text-muted);
-  margin-bottom: 1.25rem;
-}
-
-/* Split Checklist */
-.split-checklist {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.75rem 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.split-checklist li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-}
-
-.checklist-icon {
-  color: var(--color-success);
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 0.15rem;
-}
-
-.checklist-icon.secondary-color {
-  color: var(--color-secondary);
-}
-
-.checklist-icon svg {
-  width: 14px;
-  height: 14px;
-}
-
-.checklist-text {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--color-dark);
-}
-
-/* Learning Outcome Callout Box */
-.learning-outcome-box {
-  background: var(--color-primary-light);
-  border-left: 4px solid var(--color-primary);
-  padding: 1rem 1.25rem;
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
-  margin-top: 1rem;
-}
-
-.outcome-tag {
-  font-family: var(--font-heading);
-  font-size: 0.65rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: var(--color-primary);
-  background: rgba(11, 60, 155, 0.1);
-  padding: 0.2rem 0.5rem;
-  border-radius: var(--radius-sm);
-  display: inline-block;
-  margin-bottom: 0.5rem;
-}
-
-.outcome-tag.outcome-active {
-  color: var(--color-secondary);
-  background: rgba(37, 99, 235, 0.1);
-}
-
-.learning-outcome-box p {
-  font-size: 0.85rem;
-  line-height: 1.5;
-  color: var(--color-dark);
-  font-weight: 500;
-}
-
-/* ==========================================
-   VISUAL STORYTELLING ANIMATIONS STYLING
-   ========================================== */
-.story-animation-container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.animation-stage {
-  width: 100%;
-  max-width: 320px;
-  aspect-ratio: 1;
-  position: relative;
-  border-radius: var(--radius-md);
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-sm);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Caption Bubbles inside Animations */
-.animation-caption-bubble {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  right: 10px;
-  background: rgba(15, 23, 42, 0.95);
-  color: var(--color-white);
-  padding: 0.6rem 0.85rem;
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-md);
-  z-index: 20;
-  transition: all 0.5s ease-in-out;
-}
-
-.active-caption-title {
-  display: block;
-  font-family: var(--font-heading);
-  font-size: 0.75rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: 0.15rem;
-}
-
-.active-caption-text {
-  font-size: 0.65rem;
-  line-height: 1.35;
-  color: #e2e8f0;
-}
-
-/* --- TAB 1 ANIMATION: Morphing Learner --- */
-.morphing-learner-animation .stage-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 0.8s ease-in-out;
-  pointer-events: none;
-}
-
-.morphing-learner-animation .stage-bg.active {
-  opacity: 0.08;
-}
-
-.student-bg { background-color: var(--color-secondary); }
-.jobseeker-bg { background-color: var(--color-accent); }
-.employee-bg { background-color: var(--color-primary); }
-.homemaker-bg { background-color: var(--color-success); }
-.business-bg { background-color: var(--color-secondary); }
-.professional-bg { background-color: var(--color-primary-dark); }
-
-.stage-character {
-  width: 110px;
-  height: 130px;
-  z-index: 10;
-  transform: translateY(-10px);
-}
-
-.character-svg g {
-  opacity: 0;
-  transform: scale(0.9);
-  transform-origin: 50px 70px;
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.character-svg g.active-prop {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* --- TAB 2 ANIMATION: Breaking Chains --- */
-.lock-and-key-stage {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.lock-key-svg {
-  width: 100%;
-  height: 100%;
-}
-
-.padlock-shackle {
-  animation: shackleOpen 5s infinite ease-in-out;
-  transform-origin: 85px 85px;
-}
-
-.key-group {
-  animation: keyUnlock 5s infinite ease-in-out;
-  transform-origin: 100px 165px;
-}
-
-.weight-rules {
-  animation: floatAwayLeft 5s infinite ease-in-out;
-}
-
-.weight-fear {
-  animation: floatAwayRight 5s infinite ease-in-out;
-}
-
-.ripple {
-  opacity: 0;
-  animation: ripplePulse 5s infinite ease-in-out;
-  transform-origin: 100px 90px;
-}
-
-.ripple-1 { animation-delay: 0s; }
-.ripple-2 { animation-delay: 0.15s; }
-.ripple-3 { animation-delay: 0.3s; }
-
-.ripple-text {
-  opacity: 0;
-  animation: rippleText 5s infinite ease-in-out;
-  transform-origin: 100px 90px;
-}
-
-.text-1 { animation-delay: 0.1s; }
-.text-2 { animation-delay: 0.2s; }
-.text-3 { animation-delay: 0.3s; }
-
-@keyframes keyUnlock {
-  0% { transform: translateY(0) rotate(0deg); opacity: 0.2; }
-  15% { transform: translateY(-70px) rotate(0deg); opacity: 1; }
-  28% { transform: translateY(-70px) rotate(90deg); opacity: 1; }
-  75% { transform: translateY(-70px) rotate(90deg); opacity: 1; }
-  85% { transform: translateY(0) rotate(0deg); opacity: 0.2; }
-  100% { transform: translateY(0) rotate(0deg); opacity: 0.2; }
-}
-
-@keyframes shackleOpen {
-  0%, 28% { transform: translateY(0); }
-  33%, 75% { transform: translateY(-12px) rotate(-15deg); }
-  82%, 100% { transform: translateY(0); }
-}
-
-@keyframes floatAwayLeft {
-  0%, 28% { transform: translate(0, 0); opacity: 1; }
-  38%, 75% { transform: translate(-35px, 35px) scale(0.8); opacity: 0.2; }
-  82%, 100% { transform: translate(0, 0); opacity: 1; }
-}
-
-@keyframes floatAwayRight {
-  0%, 28% { transform: translate(0, 0); opacity: 1; }
-  38%, 75% { transform: translate(35px, 35px) scale(0.8); opacity: 0.2; }
-  82%, 100% { transform: translate(0, 0); opacity: 1; }
-}
-
-@keyframes ripplePulse {
-  0%, 33% { transform: scale(0.6); opacity: 0; }
-  45% { opacity: 0.7; }
-  68%, 75% { transform: scale(1.6); opacity: 0; }
-  82%, 100% { opacity: 0; }
-}
-
-@keyframes rippleText {
-  0%, 33% { opacity: 0; transform: scale(0.8); }
-  40%, 75% { opacity: 1; transform: scale(1); }
-  82%, 100% { opacity: 0; }
-}
-
-/* --- TAB 3: Grammar Methodology (Scenario Grid) --- */
-/* Old Slider animations & controls removed */
-
-/* --- TAB 4 ANIMATION: Vocabulary Activator --- */
-.vocab-activator-svg {
-  width: 100%;
-  height: 100%;
-}
-
-.reactor-core {
-  animation: corePulse 3s infinite ease-in-out;
-}
-
-.reactor-spinner {
-  animation: spinnerRotate 3s infinite linear;
-  transform-origin: 100px 80px;
-}
-
-.flying-particle {
-  animation: particleFlow 4.5s infinite linear;
-}
-
-.active-bubble-group {
-  opacity: 0;
-  transform-origin: 130px 80px;
-}
-
-.bubble-1 { animation: bubbleEmit1 4.5s infinite ease-in-out; }
-.bubble-2 { animation: bubbleEmit2 4.5s infinite ease-in-out; }
-.bubble-3 { animation: bubbleEmit3 4.5s infinite ease-in-out; }
-
-@keyframes corePulse {
-  0%, 100% { fill: var(--color-primary-light); stroke-width: 2px; }
-  30%, 35% { fill: var(--color-accent-light); stroke-width: 3px; }
-}
-
-@keyframes spinnerRotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-@keyframes particleFlow {
-  0% { transform: translate(0, 0); opacity: 0; }
-  5% { opacity: 1; }
-  30% { transform: translate(50px, 4px); opacity: 1; }
-  35%, 100% { transform: translate(50px, 4px); opacity: 0; }
-}
-
-@keyframes bubbleEmit1 {
-  0%, 32% { opacity: 0; transform: scale(0.85) translate(0, 0); }
-  42%, 85% { opacity: 1; transform: scale(1) translate(0, 0); }
-  90%, 100% { opacity: 0; transform: scale(0.85) translate(0, 0); }
-}
-
-@keyframes bubbleEmit2 {
-  0%, 38% { opacity: 0; transform: scale(0.85) translate(0, 0); }
-  48%, 85% { opacity: 1; transform: scale(1) translate(0, 0); }
-  90%, 100% { opacity: 0; transform: scale(0.85) translate(0, 0); }
-}
-
-@keyframes bubbleEmit3 {
-  0%, 44% { opacity: 0; transform: scale(0.85) translate(0, 0); }
-  54%, 85% { opacity: 1; transform: scale(1) translate(0, 0); }
-  90%, 100% { opacity: 0; transform: scale(0.85) translate(0, 0); }
-}
-
-/* --- TAB 5 ANIMATION: Confidence Focuses --- */
-.confidence-meter-svg {
-  width: 100%;
-  height: 100%;
-}
-
-.mouth-nervous {
-  animation: mouthSwitchNervous 5s infinite ease-in-out;
-}
-
-.mouth-confident {
-  animation: mouthSwitchConfident 5s infinite ease-in-out;
-}
-
-.wave-anxious {
-  stroke-dasharray: 4 4;
-  animation: waveAnxiousFlow 5s infinite linear;
-}
-
-.wave-fluent {
-  stroke-dasharray: 6 3;
-  animation: waveFluentFlow 5s infinite linear;
-}
-
-.coach-tip-bubble {
-  animation: coachTipShow 5s infinite ease-in-out;
-  transform-origin: 75px 25px;
-}
-
-.battery-level {
-  animation: chargeBattery 5s infinite ease-in-out;
-}
-
-.confidence-sparks {
-  animation: sparkShow 5s infinite ease-in-out;
-  transform-origin: 166px 27px;
-}
-
-@keyframes waveAnxiousFlow {
-  0% { opacity: 1; stroke-dashoffset: 0; }
-  30% { opacity: 1; stroke-dashoffset: -20; }
-  35%, 100% { opacity: 0; }
-}
-
-@keyframes waveFluentFlow {
-  0%, 38% { opacity: 0; stroke-dashoffset: 0; }
-  45% { opacity: 1; }
-  85% { opacity: 1; stroke-dashoffset: -30; }
-  92%, 100% { opacity: 0; }
-}
-
-@keyframes coachTipShow {
-  0%, 12% { opacity: 0; transform: translateY(-8px) scale(0.9); }
-  18%, 52% { opacity: 1; transform: translateY(0) scale(1); }
-  58%, 100% { opacity: 0; transform: translateY(-8px) scale(0.9); }
-}
-
-@keyframes mouthSwitchNervous {
-  0%, 35% { opacity: 1; }
-  40%, 100% { opacity: 0; }
-}
-
-@keyframes mouthSwitchConfident {
-  0%, 35% { opacity: 0; }
-  40%, 90% { opacity: 1; }
-  95%, 100% { opacity: 0; }
-}
-
-@keyframes chargeBattery {
-  0%, 35% { height: 0px; y: 112px; fill: var(--color-error); }
-  68%, 88% { height: 62px; y: 48px; fill: var(--color-success); }
-  94%, 100% { height: 0px; y: 112px; }
-}
-
-@keyframes sparkShow {
-  0%, 65% { opacity: 0; transform: scale(0.5); }
-  72%, 88% { opacity: 1; transform: scale(1); }
-  94%, 100% { opacity: 0; }
-}
 
 /* Accordion Styling (Misconceptions) */
 .misconceptions-accordion {
@@ -1603,41 +1350,27 @@ section {
   line-height: 1.45;
 }
 
-/* Media Queries for Methodology Redesign Responsiveness */
+/* Media Queries for Bento Grid Methodology Responsiveness */
 @media (max-width: 992px) {
-  .methodology-portal {
-    padding: 1.5rem;
-    gap: 1.5rem;
-  }
-  .portal-slider-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-  .portal-slider-arrows {
-    align-self: flex-end;
-  }
-  .portal-slide-title-header {
-    font-size: 1.25rem;
+  .methodology-bento {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .vocab-list-grid {
+  .methodology-bento {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
-  .grammar-scenarios-grid {
+  .bento-w2 {
+    grid-column: span 1;
+  }
+  .bento-card {
+    padding: 1.5rem; /* Slightly smaller padding on mobile devices */
+  }
+  .bento-list {
     grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  .barriers-visual {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .split-checklist {
-    grid-template-columns: 1fr;
+    gap: 0.5rem;
   }
 }
 /* ==========================================
@@ -1687,7 +1420,7 @@ section {
   height: 100%;
   object-fit: cover;
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  opacity: 0.15;
+  opacity: 0; /* Hidden when card is collapsed to avoid giant/dirty stretched layout */
   filter: grayscale(100%);
   pointer-events: none;
 }
@@ -1720,8 +1453,9 @@ section {
   position: absolute;
   bottom: 2rem;
   left: 50%;
-  transform: rotate(-90deg);
-  transform-origin: 0 50%;
+  transform: translateX(-50%);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
   white-space: nowrap;
   color: var(--color-primary);
   font-family: var(--font-heading);
@@ -1732,7 +1466,6 @@ section {
   z-index: 2;
   transition: opacity 0.3s ease, color 0.3s ease;
   opacity: 1;
-  margin-left: -0.575rem; /* Center the rotated vertical text horizontally */
 }
 
 .expanding-card:hover .card-collapsed-title {
@@ -2119,84 +1852,88 @@ section {
    SECTION 8: JOIN US / FINAL CALL TO ACTION
    ========================================== */
 .final-cta {
-  background-color: var(--color-primary);
+  background-color: var(--color-primary); /* Solid trustworthy brand blue */
   color: var(--color-white);
-  padding: 2.25rem 0;
+  padding: 5rem 0;
   text-align: center;
+  position: relative;
 }
 
 .final-cta-container {
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
+.cta-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .final-cta-tag {
-  display: inline-block;
+  display: block;
   font-family: var(--font-heading);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--color-accent-light);
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 0.4rem 1rem;
-  border-radius: var(--radius-full);
-  margin-bottom: 1rem;
+  color: var(--color-accent-light); /* Soft sky blue color for text */
+  margin-bottom: 0.75rem;
 }
 
 .final-cta-title {
   color: var(--color-white);
-  font-size: 1.85rem;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
 }
 
 .final-cta-desc {
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.85); /* Clean high-contrast text description */
+  margin-bottom: 2rem;
   line-height: 1.6;
-}
-
-.cta-details-box {
-  background-color: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 1.25rem;
-  border-radius: var(--radius-md);
-  margin-bottom: 1.5rem;
-  backdrop-filter: blur(10px);
-}
-
-.cta-details-box h4 {
-  color: var(--color-white);
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 0.35rem;
-}
-
-.cta-subtitle {
-  color: var(--color-accent-light);
-  font-size: 0.95rem;
-  font-weight: 600;
+  max-width: 600px;
 }
 
 .final-cta-btns {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 1.25rem;
+}
+
+.cta-primary-btn {
+  background-color: var(--color-secondary) !important;
+  color: var(--color-white) !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  font-weight: 600;
+}
+
+.cta-primary-btn:hover {
+  background-color: var(--color-secondary-hover) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
 }
 
 .whatsapp-btn {
   background-color: #25D366 !important;
   color: var(--color-white) !important;
   border: none !important;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.15);
 }
 
 .whatsapp-btn:hover {
   background-color: #20BA5A !important;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.3);
 }
 
 .whatsapp-btn svg {
@@ -2280,13 +2017,14 @@ section {
   font-size: 0.9rem;
 }
 
-.footer-bottom-links {
-  display: flex;
-  gap: 1.5rem;
+.footer-division {
+  font-weight: 600;
+  color: var(--color-text-muted);
 }
 
-.footer-bottom-links a:hover {
-  color: var(--color-primary); /* Royal blue link hover color */
+.footer-brand .logo-img {
+  height: 68px;
+  margin-bottom: 1.25rem;
 }
 
 /* ==========================================
@@ -2484,9 +2222,7 @@ section {
   .journey-card.stage-4 {
     grid-column: span 1 !important;
   }
-  .methodology-portal {
-    padding: 2rem;
-  }
+
   .expanding-cards {
     height: 480px;
   }
@@ -2588,10 +2324,10 @@ section {
     opacity: 0.12;
   }
   .card-collapsed-title {
-    transform: translate(-50%, 0) rotate(0deg);
+    writing-mode: horizontal-tb;
+    transform: translateX(-50%);
     bottom: 1.25rem;
     font-size: 0.95rem;
-    margin-left: 0;
   }
   .card-expanded-content {
     width: 100%;
@@ -2634,12 +2370,12 @@ section {
     font-size: 1.5rem;
   }
   .hero {
-    padding-top: calc(var(--header-height) + 1.5rem);
-    padding-bottom: 2rem;
+    padding-top: calc(var(--header-height) + 3rem);
+    padding-bottom: 3.5rem;
   }
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 3.5rem;
     text-align: center;
   }
   .hero-desc {
@@ -2655,15 +2391,106 @@ section {
     width: 100%;
   }
   .hero-image-wrapper {
-    order: -1;
     align-self: center;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .understand-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
+  .hero-floating-pill {
+    font-size: 0.72rem;
+    padding: 0.45rem 0.9rem;
+  }
+
+  .pill-personalized {
+    top: 15%;
+    left: 4%;
+  }
+
+  .pill-practical {
+    top: 25%;
+    right: 4%;
+  }
+
+  .pill-purpose {
+    bottom: 35%;
+    left: 2%;
+  }
+
+  .pill-confidence {
+    bottom: 25%;
+    right: 2%;
+  }
+
+  .pill-guidance {
+    bottom: 8%;
+    left: 25%;
+  }
+
+
+  .understand-table-wrapper {
+    box-shadow: var(--shadow-md);
+  }
+
+  .assessment-table, 
+  .assessment-table thead, 
+  .assessment-table tbody, 
+  .assessment-table th, 
+  .assessment-table td, 
+  .assessment-table tr {
+    display: block;
+  }
+
+  .assessment-table thead {
+    display: none;
+  }
+
+  .assessment-table tbody tr {
+    border-bottom: 1px solid var(--color-border);
+    padding: 1.5rem 1rem;
+    border-left: 4px solid var(--color-primary);
+    text-align: left;
+  }
+
+  .assessment-table tbody tr:hover {
+    background-color: rgba(11, 60, 155, 0.01);
+  }
+
+  .assessment-table td {
+    border-bottom: none;
+    padding: 0.35rem 0;
+    width: 100% !important;
+  }
+
+  .assessment-table td:first-child {
+    padding-bottom: 0.75rem;
+  }
+
+  .assessment-table td:nth-child(2)::before {
+    content: "What We Check: ";
+    font-weight: 700;
+    color: var(--color-dark);
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+  }
+
+  .assessment-table td:nth-child(3)::before {
+    content: "Impact: ";
+    font-weight: 700;
+    color: var(--color-dark);
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+  }
+  
+  .understand-summary-banner {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
   }
   
   /* Stepper mobile vertical track */
@@ -2726,9 +2553,16 @@ section {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
+  .final-cta {
+    padding: 3.5rem 0;
+  }
+  .final-cta-title {
+    font-size: 1.85rem;
+  }
   .final-cta-btns {
     flex-direction: column;
     width: 100%;
+    gap: 0.75rem;
   }
   .final-cta-btns .btn {
     width: 100%;
@@ -2789,4 +2623,21 @@ section {
   .card-expanded-content {
     padding: 1.5rem 1rem;
   }
+  .pill-personalized,
+  .pill-guidance {
+    display: none;
+  }
+  .pill-practical {
+    top: 15%;
+    right: 2%;
+  }
+  .pill-purpose {
+    bottom: 30%;
+    left: 2%;
+  }
+  .pill-confidence {
+    bottom: 12%;
+    right: 2%;
+  }
+
 }
